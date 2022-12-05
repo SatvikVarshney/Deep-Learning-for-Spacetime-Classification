@@ -6,9 +6,9 @@ def WeylGeneration(sampleVec):
     weyl = [0,0,0,0,0]
     for i in range(0,5):
         if sampleVec[i] == 'N':
-            weyl[i] = (random.random()) - 10
+            weyl[i] = (random.randint(0,20)) - 10
             while weyl[i] == 0:
-                weyl[i] = (random.random()) - 10
+                weyl[i] = (random.randint(0,20)) - 10
     return weyl
 
 def QuarticLabeling(weyl):
@@ -27,6 +27,7 @@ def QuarticLabeling(weyl):
         w1temp = w1
         w1 = w3
         w3 = w1temp
+
     i = w0*w4 - 4*w1*w3 + 3*w2**2
     j = w0*(w2*w4 - w3*w3) - w1*(w1*w4 - w2*w3) + w2*(w1*w3 - w2*w2)
     g = w0**2*w3 - 3*w0*w1*w2 + 2*w1**3
@@ -68,40 +69,58 @@ def GeneratePerSample(sampleVec,iterations,writer):
     stateN = ['N0000','0000N']
     stateD = ['00N00']
 
-    for i in range(0,iterations):
+    i = 0
+    while i < iterations:
+        i += 1 
         weyl = WeylGeneration([*sampleVec])
         if sampleVec in state0:
             ocnt += 1
             weyl.append('O')
+            writer.writerow(weyl)
         elif sampleVec in stateI:
             icnt += 1
             weyl.append('I')
+            writer.writerow(weyl)
         elif sampleVec in stateII:
             iicnt += 1
             weyl.append("II")
+            writer.writerow(weyl)
         elif sampleVec in stateIII:
             iiicnt += 1
             weyl.append("III")
+            writer.writerow(weyl)
         elif sampleVec in stateN:
             ncnt += 1
             weyl.append("N")
+            writer.writerow(weyl)
         elif sampleVec in stateD:
             dcnt += 1
             weyl.append("D")
+            writer.writerow(weyl)
         else:
             weyl = QuarticLabeling(weyl)
             
             if weyl[5] == 'I':
                 icnt += 1
+                if icnt < 7500:
+                    writer.writerow(weyl)
+                else:
+                    i -= 1
+                    icnt -= 1
             elif weyl[5] == 'II':
                 iicnt += 1
+                writer.writerow(weyl)
             elif weyl[5] == 'III':
                 iiicnt += 1
+                writer.writerow(weyl)
             elif weyl[5] == 'N':
                 ncnt += 1
+                writer.writerow(weyl)
             else:
                 dcnt += 1
-        writer.writerow(weyl)
+                writer.writerow(weyl)
+
+        
     print("O:",ocnt,",I:",icnt,",II:",iicnt,",III:",iiicnt,",N:",ncnt,",D:",dcnt)
     return [ocnt,icnt,iicnt,iiicnt,ncnt,dcnt]
 
