@@ -2,16 +2,16 @@ import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-# load dataset into Pandas DataFrame
+
 df = pd.read_csv("shuffledratio.csv", names=['0','1','2','3','4','5','target'])
 df = df.iloc[1:,1:]
 features = ['1', '2', '3', '4', '5']
-# Separating out the feature
+
 x = df.loc[:, features].values
-# Separating out the target
+
 y = df.loc[:,['target']]
 
-# Standardizing the features
+
 x = StandardScaler().fit_transform(x)
 
 pca = PCA(n_components=2)
