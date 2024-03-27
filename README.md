@@ -3,15 +3,15 @@
 
 This project applies machine learning techniques to the classification of spacetimes in the context of general relativity, specifically addressing the Petrov classification of the Weyl tensor. Utilizing a feed-forward neural network, this work showcases the potential of machine learning in identifying and classifying the intricate structures of spacetime, demonstrating a novel approach to a long-standing problem in theoretical physics. With this project aim at replicating and validating the results obtained by Yang-Hui He and Juan Manuel Perez Ipi in their work titled "Machine-Learning the Classication of Spacetimes"
 
-###Overview
+### Overview
 The aim of this project is to model Petrov’s classification of spacetimes using machine learning. By generating numerical data for various spacetime structures and employing a feed-forward neural network, we achieved a high degree of success in classifying spacetimes into distinct Petrov types (I, II, III, D, N, O). This method not only allows for efficient classification but also aids in the analysis of underlying patterns in the structure of different spacetime types.
 
-###Features
+### Features
 Data Generation: Synthetic generation of spacetime data based on the Weyl scalars in the Newman-Penrose formalism, covering all possible Petrov types.
 Neural Network Model: Implementation of a 5 layer deep feed-forward neural network with high accuracy in classifying spacetime data into Petrov types.
 Visualization: Use of Principal Component Analysis (PCA) to visualize and analyze the patterns in the generated spacetime data.
 
-###Technologies
+### Technologies
 Python for data generation and neural network implementation.
 Libraries: PyTorch for neural network architecture, NumPy for numerical operations, and matplotlib for data visualization.##
 
