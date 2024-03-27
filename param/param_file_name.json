@@ -4,6 +4,5 @@
 	"num_input": 5,
 	"batch_size" : 128,
 	"num_hidden" : 500,
-	"num_classes": 6
-	
+	"num_classes": 6	
 }
