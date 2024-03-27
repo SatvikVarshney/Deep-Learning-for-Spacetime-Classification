@@ -1,5 +1,5 @@
 # Deep Learning Project - Classifying Petrov Space Time Symmetries
-## PHYS449 Main project- ##### Satvik Varshney 
+## PHYS449 Main project
 
 This project applies machine learning techniques to the classification of spacetimes in the context of general relativity, specifically addressing the Petrov classification of the Weyl tensor. Utilizing a 5 Layer deep feed-forward neural network, this work showcases the potential of machine learning in identifying and classifying the intricate structures of spacetime, demonstrating a novel approach to a long-standing problem in theoretical physics. With this project we aim at replicating and validating the results obtained by Yang-Hui He and Juan Manuel Perez Ipi in their work titled "Machine-Learning the Classification of Spacetimes"
 
