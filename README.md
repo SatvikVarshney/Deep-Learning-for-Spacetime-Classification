@@ -13,7 +13,7 @@ Visualization: Use of Principal Component Analysis (PCA) to visualize and analyz
 
 ### Technologies
 Python for data generation and neural network implementation.
-Libraries: PyTorch for neural network architecture, NumPy for numerical operations, and matplotlib for data visualization.##
+Libraries: PyTorch for neural network architecture, NumPy for numerical operations, and matplotlib for data visualization.
 
 
 #### Command line syntax to run main.py
